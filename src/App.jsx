@@ -14,7 +14,9 @@ function App() {
 
   return (
     <div className={style.app}>
-      <HashRouter basename="/Portfolio">
+      <HashRouter
+        basename={import.meta.env.MODE === "development" ? "/" : "/Portfolio"}
+      >
         <Navbar />
         <Routes>
           <Route path="/" element={<Hero />}></Route>
