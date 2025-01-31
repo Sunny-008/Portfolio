@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className={style.app}>
-      <BrowserRouter>
+      <BrowserRouter basename="/Portfolio">
         <Navbar />
         <Routes>
           <Route path="/" element={<Hero />}></Route>
