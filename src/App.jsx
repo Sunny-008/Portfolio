@@ -7,14 +7,14 @@ import { About } from "./components/About/About";
 import Skill from "./components/SKILL/Skill";
 import { Projects } from "./components/Projects/Projects";
 import { Contact } from "./components/Contact/Contact";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className={style.app}>
-      <BrowserRouter basename="/Portfolio">
+      <HashRouter basename="/Portfolio">
         <Navbar />
         <Routes>
           <Route path="/" element={<Hero />}></Route>
@@ -31,20 +31,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Projects />}></Route>
         </Routes>
-        {/* <Routes>
-          <Route path="/" element={<About />}></Route>
-        </Routes> */}
+
         <Contact />
-      </BrowserRouter>
+      </HashRouter>
     </div>
-    // <div className={style.app}>
-    //   <Navbar />
-    //   <Hero />
-    //   <About />
-    //   <Skill />
-    //   <Projects />
-    //   <Contact />
-    // </div>
   );
 }
 
