@@ -1,0 +1,51 @@
+import { useState } from "react";
+
+import style from "./App.module.css";
+import Navbar from "./components/Navbar/Navbar";
+import { Hero } from "./components/Hero/hero";
+import { About } from "./components/About/About";
+import Skill from "./components/SKILL/Skill";
+import { Projects } from "./components/Projects/Projects";
+import { Contact } from "./components/Contact/Contact";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className={style.app}>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/skill" element={<Skill />}></Route>
+          <Route path="/projects" element={<Projects />}></Route>
+        </Routes>
+        <Routes>
+          <Route path="/" element={<About />}></Route>
+        </Routes>
+        <Routes>
+          <Route path="/" element={<Skill />}></Route>
+        </Routes>
+        <Routes>
+          <Route path="/" element={<Projects />}></Route>
+        </Routes>
+        {/* <Routes>
+          <Route path="/" element={<About />}></Route>
+        </Routes> */}
+        <Contact />
+      </BrowserRouter>
+    </div>
+    // <div className={style.app}>
+    //   <Navbar />
+    //   <Hero />
+    //   <About />
+    //   <Skill />
+    //   <Projects />
+    //   <Contact />
+    // </div>
+  );
+}
+
+export default App;
