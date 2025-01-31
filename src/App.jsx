@@ -14,12 +14,13 @@ function App() {
 
   return (
     <div className={style.app}>
-      <HashRouter
+      <BrowserRouter
         basename={import.meta.env.MODE === "development" ? "/" : "/Portfolio"}
       >
         <Navbar />
         <Routes>
           <Route path="/" element={<Hero />}></Route>
+          {/* <Route path="/Hero"></Route> */}
           <Route path="/about" element={<About />}></Route>
           <Route path="/skill" element={<Skill />}></Route>
           <Route path="/projects" element={<Projects />}></Route>
@@ -35,7 +36,7 @@ function App() {
         </Routes>
 
         <Contact />
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

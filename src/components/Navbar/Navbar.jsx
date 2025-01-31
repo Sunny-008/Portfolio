@@ -9,9 +9,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className={styles.navbar}>
-      <a className={styles.title} href="/">
-        Portfolio
-      </a>
+      <a className={styles.title}>Portfolio</a>
       <div className={styles.menu} onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? (
           <RxCross1 className={styles.menuBtn} />
@@ -24,7 +22,8 @@ const Navbar = () => {
           onClick={() => setMenuOpen(false)}
         >
           <li>
-            <a href="/">Home</a>
+            {/* <a href="/">Home</a> */}
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
             <a>
